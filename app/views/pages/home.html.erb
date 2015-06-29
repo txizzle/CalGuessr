@@ -1,48 +1,46 @@
 <% title("Home Page") %>
 
-
-
 <body>
-        <div class="container-fluid .fill">
-            <div class="row text-center title">
-                <h1><span id="cal">Cal</span><span id="guessr">Guessr</span></h1>
+    <div class="container-fluid .fill">
+        <div class="row text-center title">
+            <h1><span id="cal">Cal</span><span id="guessr">Guessr</span></h1>
+        </div>
+        <div class="row wholegame">
+            <div class="col-md-8 image">
+                <img id="image" name="slideImg" src="gameimg/000.jpg" onClick="switchImage('slideImg')" />
+                <p id="test">Image URL will go here.</p>
+                <p id="answers">Image coordinates will go here.</p>
+                <div class="datas"></div>
             </div>
-            <div class="row wholegame">
-                <div class="col-md-6 image">
-                    <img id="image" name="slideImg" src="gameimg/000.jpg" onClick="switchImage('slideImg')" />
-                    <p id="test">Image URL will go here.</p>
-                    <p id="answers">Image coordinates will go here.</p>
-                    <div class="datas"></div>
+            <div class="col-md-4 rightside">
+                <div class="info bordered">
+                    <p><strong>Instructions:</strong> Think you know UC Berkeley's campus? Click on the map to guess where the image was taken from! The more accurate your guess, the more points you get. Good luck!</p>
                 </div>
-                <div class="col-md-6 rightside">
-                    <div class="info bordered">
-                        <p><strong>Instructions:</strong> Think you know UC Berkeley's campus? Click on the map to guess where the image was taken from! The more accurate your guess, the more points you get. Good luck!</p>
-                    </div>
-                    <div class="stats container bordered">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row scorebox">
-                                    <h2 id="score">Score: ---</h2>
-                                </div>
-                                <div class="row scorebox">
-                                    <h2 id="avgscore">Average Score: ---</h2>
-                                </div>
+                <div class="stats container bordered">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row scorebox">
+                                <h2 id="score">Score: ---</h2>
                             </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <h2 id="lastguess"></h2>
-                                </div>
-                                <div class="row"></div>
+                            <div class="row scorebox">
+                                <h2 id="avgscore">Average Score: ---</h2>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h2 id="lastguess"></h2>
+                            </div>
+                            <div class="row"></div>
+                        </div>
                     </div>
-                    <div id="map-container" class="bordered">
-                        <div id="map-canvas"></div>
-                    </div>
-                    <div id="cheats">
-                        <p>Tired of losing? Navigate to <a href="hacks.html">hacks</a> to see locations of all images I've taken so far!</p>
-                    </div>
+                </div>
+                <div id="map-container" class="bordered">
+                    <div id="map-canvas"></div>
+                </div>
+                <div id="cheats">
+                    <p>Tired of losing? Navigate to <a href="hacks.html">hacks</a> to see locations of all images I've taken so far!</p>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
