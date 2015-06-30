@@ -346,6 +346,11 @@ $component-offset-horizontal: 180px; // Horizontal offset for forms and lists
 // APPLICATION-WIDE
 html,body {
   height: 100%;
+  background: asset-data-url("campus-bg.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #wrap {
@@ -585,11 +590,12 @@ img {
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: darkgrey;
+    background-color: rgba(55,55,55,0.7);
 }
 
 .title {
     height: 60px;
+    background-color: white;
 }
 
 h1 {
@@ -619,7 +625,7 @@ img {
 .info p {
     color: white;
     padding: 1.0vmin;
-    font-size: 1.5vmin;
+    font-size: 1.5vh;
     text-align: left;
 }
 
@@ -638,4 +644,5 @@ img {
 
 .scorebox h2 {
   padding-left: 1.0vmin;
+  font-size: 2.5vh;
 }
