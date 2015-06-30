@@ -155,28 +155,6 @@ $navbar-default-toggle-hover-bg: #dddddd;
 $navbar-default-toggle-icon-bar-bg: #cccccc;
 $navbar-default-toggle-border-color: #dddddd;
 
-// Navbar: Inverted navbar
-// -> Basics
-$navbar-inverse-color: #eeeeee;
-$navbar-inverse-bg: #222222;
-$navbar-inverse-border: darken($navbar-inverse-bg, 7%);
-// -> Links
-$navbar-inverse-link-color: #eeeeee;
-$navbar-inverse-link-hover-color: #ffffff;
-$navbar-inverse-link-hover-bg: $navbar-inverse-bg;
-$navbar-inverse-link-active-color: #ffffff;
-$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 7%);
-$navbar-inverse-link-disabled-color: #444444;
-$navbar-inverse-link-disabled-bg:$navbar-inverse-bg;
-// -> Brand
-$navbar-inverse-brand-color: $navbar-inverse-link-color;
-$navbar-inverse-brand-hover-color: #ffffff;
-$navbar-inverse-brand-hover-bg: $navbar-inverse-bg;
-// -> Toggle
-$navbar-inverse-toggle-hover-bg: #333333;
-$navbar-inverse-toggle-icon-bar-bg: #ffffff;
-$navbar-inverse-toggle-border-color: #333333;
-
 // Nav: Default nav
 // -> Common values
 $nav-link-padding: 10px 15px;
@@ -346,11 +324,6 @@ $component-offset-horizontal: 180px; // Horizontal offset for forms and lists
 // APPLICATION-WIDE
 html,body {
   height: 100%;
-  background: asset-data-url("campus-bg.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 #wrap {
@@ -566,6 +539,15 @@ img {
 }
 //***********************************************************
 
+body {
+  background: asset-data-url("campus-bg.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .bordered {
   border-color: #fff;
   border-style: solid;
@@ -588,14 +570,10 @@ img {
     color: #041e41;
 }
 
-body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: rgba(55,55,55,0.7);
-}
 
 .title {
     height: 60px;
-    background-color: white;
+    background-color: rgba(255,255,255,0.7);
 }
 
 h1 {
@@ -645,4 +623,10 @@ img {
 .scorebox h2 {
   padding-left: 1.0vmin;
   font-size: 2.5vh;
+  color: black;
+}
+
+.wholegame {
+  background-color: rgba(55,55,55,0.4);
+  color: white;
 }
