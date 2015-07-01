@@ -327,7 +327,7 @@ html,body {
 }
 
 #wrap {
-  min-height: 100%;
+  //min-height: 100%;
   //padding-bottom: 120px;
 }
 
@@ -527,11 +527,14 @@ img {
 //***********************************************************
 // FOOTER
 #footer {
-  background-color: #222222;
-  color: #eeeeee;
-  height: 100px;
-  margin-top: -100px;
+  background-color: rgba(34,34,34,0.9);
+  color: white;
+  height: 10vh;
   letter-spacing: 1px;
+
+  a {
+    color: red;
+  }
 
   .footer-first-row {
     padding-top: 20px;
@@ -621,7 +624,8 @@ img {
 }
 
 .scorebox h2 {
-  padding-left: 1.0vmin;
+  margin: 0px;
+  padding: 1.0vmin;
   font-size: 2.5vh;
   color: black;
 }
