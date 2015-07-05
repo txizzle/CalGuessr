@@ -322,16 +322,21 @@ $component-offset-horizontal: 180px; // Horizontal offset for forms and lists
 
 //***********************************************************
 // APPLICATION-WIDE
+* {
+  margin: 0;
+}
 html,body {
   height: 100%;
 }
 
 #wrapper {
-  //min-height: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -8vh;
   //padding-bottom: 120px;
   background-color: rgba(55,55,55,0.4);
   color: white;
-  height: 100%;
 }
 
 blockquote{
@@ -534,10 +539,6 @@ img {
   color: white;
   height: 8vh;
   width: 100%;
-  letter-spacing: 1px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 
   a {
     color: red;
@@ -547,6 +548,16 @@ img {
     padding-top: 1vh;
   }
 }
+
+//***********************************************************
+
+
+//***********************************************************
+// PUSH
+.push {
+  height: 8vh;
+}
+
 //***********************************************************
 
 body {
@@ -583,7 +594,7 @@ body {
 
 header {
     height: 8vh;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
 }
 
 h1 {
