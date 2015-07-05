@@ -326,9 +326,12 @@ html,body {
   height: 100%;
 }
 
-#wrap {
+#wrapper {
   //min-height: 100%;
   //padding-bottom: 120px;
+  background-color: rgba(55,55,55,0.4);
+  color: white;
+  height: 100%;
 }
 
 blockquote{
@@ -530,7 +533,11 @@ img {
   background-color: rgba(34,34,34,0.9);
   color: white;
   height: 8vh;
+  width: 100%;
   letter-spacing: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   a {
     color: red;
@@ -560,29 +567,30 @@ body {
 #map-container {
    height: 50vh;
  }
- #map-canvas {
-   height: 100%;
-   width: 100%;
- }
 
- #cal {
-    color: #ffb819;
+#map-canvas {
+ height: 100%;
+ width: 100%;
+}
+
+#cal {
+  color: #ffb819;
 }
 
 #guessr {
     color: #041e41;
 }
 
-
-.title {
+header {
     height: 8vh;
     background-color: rgba(255,255,255,0.7);
 }
 
 h1 {
-    font-weight: bold;
-    font-size: 7vh;
-    margin-top: 0px;
+  font-weight: bold;
+  font-size: 7vh;
+  margin-top: 0px;
+  font-color: white;
 }
 
 img {
@@ -628,11 +636,6 @@ img {
   padding: 1.0vmin;
   font-size: 2.5vh;
   color: black;
-}
-
-.wholegame {
-  background-color: rgba(55,55,55,0.4);
-  color: white;
 }
 
 #cheats p{
