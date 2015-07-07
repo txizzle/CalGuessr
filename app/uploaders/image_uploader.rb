@@ -17,7 +17,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   version :thumbnail do
     eager
-    resize_to_fit(250, 1000)
+    resize_to_fit(50, 50)
   end
   # Choose what kind of storage to use for this uploader:
   #storage :file
