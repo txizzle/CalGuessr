@@ -69,3 +69,4 @@ end
 
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'exifr'
