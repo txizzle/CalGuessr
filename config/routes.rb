@@ -1,4 +1,5 @@
 Calguessr::Application.routes.draw do
+  resources :questions
   resources :games
   root "pages#home"
   get "home", to: "pages#home", as: "home"

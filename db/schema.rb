@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704080521) do
+ActiveRecord::Schema.define(version: 20150707003716) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 20150704080521) do
   end
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "difficulty"
+    t.integer  "attempts"
+    t.integer  "correct"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "",    null: false
