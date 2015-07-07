@@ -25,7 +25,7 @@
   <%= @question.correct %>
 </p>
 
-<% unless @user.image_url.nil? %><%= image_tag @user.image_url %><br /><% end %>
-
+<% unless @question.image_url.nil? %><%= image_tag @question.image_url %><br /><% end %>
+<% image_tag(@question.image_url, :width => 50, :height => 50) %>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
