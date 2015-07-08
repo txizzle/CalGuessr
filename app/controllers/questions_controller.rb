@@ -24,7 +24,14 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(question_params)
+    path = question_params[:image].path
+    exifr = EXIFR::JPEG.new(path)
+    new_params = question_params
+    new_params[:lat] = exifr.gps.latitude
+    new_params[:long] = exifr.gps.longitude
+    noticestring = exifr.gps.latitude.to_s + exifr.gps.longitude.to_s
+    @question = Question.new(new_params)
+    
 
     respond_to do |format|
       if @question.save
