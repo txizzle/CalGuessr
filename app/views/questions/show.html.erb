@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row center-row">
-  <div class="col-md-6 center text-center" id="questioninfo">
+  <div class="col-md-6 center text-center">
+    <div id="questioninfo">
       <p>
         <strong>Lat:</strong>
         <%= @question.lat %>
@@ -25,10 +26,13 @@
         <strong>Correct:</strong>
         <%= @question.correct %>
       </p>
+    </div>
   </div>
-  <div class="col-md-6 center">
-    <%= image_tag(@question.image_url, :width => 500, :height => 1000, :crop => :fill) %>
+  <div class="col-md-6 center text-center">
+    <%= image_tag(@question.image_url, :width => 750, :height => 1000, :crop => :fill) %>
   </div>
+</div>
+<div class="row text-center shownav">
   <%= link_to 'Edit', edit_question_path(@question) %> |
   <%= link_to 'Back', questions_path %>
 </div>

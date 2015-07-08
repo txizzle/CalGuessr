@@ -654,6 +654,44 @@ img {
   margin: 0 0 0.5vh;
 }
 
-table {
+table, th, td {
   color: black;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+
+form {
+  color: black;
+}
+
+.center {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+.center-row {
+  display: table;
+}
+
+#questioninfo {
+  background-color: #041e41;
+  padding: 1vh;
+  border: 1px solid white;
+  margin: auto;
+  width: 50%;
+}
+
+.shownav {
+  padding: 1.5vh;
+  border: 1px solid white;
+  background-color: #041e41;
+  width: 25%;
+  margin: auto;
+  color: white;
+  a {
+    color: white;
+  }
 }
