@@ -16,6 +16,7 @@ $link-hover-color: darken($link-color, 15%);
 
 // Typography
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,600,700);
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $font-family-monospace: 'Menlo','Monaco','Consolas','Courier New', monospace;
@@ -540,10 +541,6 @@ img {
   height: 8vh;
   width: 100%;
 
-  a {
-    color: red;
-  }
-
   .footer-first-row {
     padding-top: 1vh;
   }
@@ -584,17 +581,17 @@ body {
  width: 100%;
 }
 
-#cal {
+.cal {
   color: #ffb819;
 }
 
-#guessr {
-    color: #041e41;
+.guessr {
+  color: #041e41;
 }
 
 header {
-    height: 8vh;
-    background-color: rgba(255,255,255,0.8);
+  height: 8vh;
+  background-color: rgba(255,255,255,0.8);
 }
 
 h1 {
@@ -605,14 +602,14 @@ h1 {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    margin: 5px;
+  max-width: 100%;
+  height: auto;
+  margin: 5px;
 }
 
 .rightside {
-    height: auto;
-    float: left;
+  height: auto;
+  float: left;
 }
 .info {
     height: 10vh;
@@ -655,10 +652,19 @@ img {
 }
 
 table, th, td {
-  color: black;
-  border: 1px solid black;
+  color: #ffb819;
+  border: 1px solid #ffb819;
+  background-color: rgba(4,30,65,0.7);
   text-align: center;
   padding: 5px;
+  font-family: 'Dosis';
+  a {
+    color: #ffb819;
+  }
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 
@@ -672,26 +678,50 @@ form {
   float: none;
 }
 
-.center-row {
-  display: table;
-}
-
 #questioninfo {
-  background-color: #041e41;
+  font-family: 'Open Sans';
+  background-color: rgba(4,30,65,0.7);
   padding: 1vh;
-  border: 1px solid white;
+  border: 1px solid #ffb819;
+  color: #ffb819;
   margin: auto;
   width: 50%;
 }
 
 .shownav {
   padding: 1.5vh;
-  border: 1px solid white;
-  background-color: #041e41;
   width: 25%;
   margin: auto;
-  color: white;
-  a {
-    color: white;
+  color: #ffb819;
+}
+
+@font-face {
+  font-family: 'Infinity';
+  src: url(Infinity.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Adam CG Pro';
+  src: url(Adamcgpro.otf) format('truetype');
+}
+
+.btn {
+  font-family: 'Dosis';
+  color: #ffb819;
+  font-size: 18px;
+  background: rgba(4,30,65,0.7);
+  padding: 10px 40px 10px 40px;
+  border: solid #ffb819 2px;
+  text-decoration: none;
+  border-radius: 0px;
   }
+
+.btn:hover {
+  background: #ffb819;
+  text-decoration: none;
+  color: #041e41;
+}
+
+.maintable {
+  margin: auto;
 }

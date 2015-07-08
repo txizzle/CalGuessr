@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-<div class="row center-row">
+<p id="notice" class="text-center"><%= notice %></p>
+<div class="row">
   <div class="col-md-6 center text-center">
     <div id="questioninfo">
       <p>
@@ -33,6 +33,6 @@
   </div>
 </div>
 <div class="row text-center shownav">
-  <%= link_to 'Edit', edit_question_path(@question) %> |
-  <%= link_to 'Back', questions_path %>
+  <%= link_to 'Edit', edit_question_path(@question), :class => "btn" %>
+  <%= link_to 'Back', questions_path, :class => "btn"%>
 </div>

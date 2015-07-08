@@ -19,12 +19,8 @@
         <%= render 'layouts/messages' %>
       </div>
     </div>
+    <%= yield %>
 
-    <div class="row .fill">
-      <div class="col-sm-12">
-        <%= yield %>
-      </div>
-    </div>
     <div class="push"></div>
   </div>
   <%= render 'layouts/footer' %>

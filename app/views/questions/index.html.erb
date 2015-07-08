@@ -1,37 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1 class="cal">All Questions</h1>
 
-<h1>Listing Questions</h1>
+    <table class="maintable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Lat</th>
+          <th>Long</th>
+          <th>Difficulty</th>
+          <th>Attempts</th>
+          <th>Correct</th>
+          <th>Image</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>Difficulty</th>
-      <th>Attempts</th>
-      <th>Correct</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @questions.each do |question| %>
+          <tr>
+            <td><%= question.id %></td>
+            <td><%= question.lat %></td>
+            <td><%= question.long %></td>
+            <td><%= question.difficulty %></td>
+            <td><%= question.attempts %></td>
+            <td><%= question.correct %></td>
+            <td><%= image_tag(question.image_url(:thumbnail)) %></td>
+            <td><%= link_to 'Show', question %></td>
+            <td><%= link_to 'Edit', edit_question_path(question) %></td>
+            <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.lat %></td>
-        <td><%= question.long %></td>
-        <td><%= question.difficulty %></td>
-        <td><%= question.attempts %></td>
-        <td><%= question.correct %></td>
-        <td><%= image_tag(question.image_url(:thumbnail)) %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <br>
 
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+    <%= link_to 'New Question', new_question_path, :class => "btn" %>
+    <%= link_to 'Home', home_path, :class => "btn" %>
+  </div>
+</div>
