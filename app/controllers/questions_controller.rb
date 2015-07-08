@@ -27,8 +27,8 @@ class QuestionsController < ApplicationController
     path = question_params[:image].path
     exifr = EXIFR::JPEG.new(path)
     new_params = question_params
-    new_params[:lat] = exifr.gps.latitude
-    new_params[:long] = exifr.gps.longitude
+    new_params[:lat] = (exifr.gps.latitude*10000000).round / 10000000.0
+    new_params[:long] = (exifr.gps.longitude*10000000).round / 10000000.0
     noticestring = exifr.gps.latitude.to_s + exifr.gps.longitude.to_s
     @question = Question.new(new_params)
     
