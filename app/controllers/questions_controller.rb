@@ -25,23 +25,28 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     path = question_params[:image].path
-    exifr = EXIFR::JPEG.new(path)
     new_params = question_params
-    new_params[:lat] = (exifr.gps.latitude*10000000).round / 10000000.0
-    new_params[:long] = (exifr.gps.longitude*10000000).round / 10000000.0
-    noticestring = exifr.gps.latitude.to_s + exifr.gps.longitude.to_s
-    @question = Question.new(new_params)
+    exifr = EXIFR::JPEG.new(path)
+    if exifr.gps != nil
+      new_params[:lat] = (exifr.gps.latitude*10000000).round / 10000000.0
+      new_params[:long] = (exifr.gps.longitude*10000000).round / 10000000.0
+      noticestring = exifr.gps.latitude.to_s + exifr.gps.longitude.to_s
+      @question = Question.new(new_params)
+      respond_to do |format|
+        if @question.save
+          format.html { redirect_to @question, notice: 'Question was successfully created.' }
+          format.json { render :show, status: :created, location: @question }
+        else
+          format.html { render :new }
+          format.json { render json: @question.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      redirect_to new_question_url, :flash => { :error => "The image you attached doesn't have GPS EXIF data! Please try another image."}
+    end
     
 
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
-        format.json { render :show, status: :created, location: @question }
-      else
-        format.html { render :new }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
-    end
+    
   end
 
   # PATCH/PUT /questions/1
