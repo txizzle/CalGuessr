@@ -2,7 +2,7 @@
 // BOOTSTRAP VARIABLES OVERRIDES
 
 // Color system
-$brand-primary: #041e41;
+$brand-primary: #ffb819;
 $brand-success: #5cb85c;
 $brand-warning: #f0ad4e;
 $brand-danger: #d9534f;
@@ -12,7 +12,7 @@ $brand-info: #5bc0de;
 $body-bg: #ffffff;
 $text-color: #373737;
 $link-color: $brand-primary;
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: white;
 
 // Typography
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
@@ -728,4 +728,29 @@ form {
 
 .maintable-container {
   margin-bottom: 20px;
+}
+
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: 'Dosis';
+  color: #ffb819;
+  font-size: 18px;
+  background: rgba(4,30,65,0.7);
+  padding: 10px 40px 10px 40px;
+  border: solid #ffb819 2px;
+  text-decoration: none;
+  border-radius: 0px;
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #ffb819;
+  text-decoration: none;
+  color: #041e41;
 }

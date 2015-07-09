@@ -1,4 +1,3 @@
-<p id="notice" class="text-center"><%= notice %></p>
 <div class="row">
   <div class="col-md-6 center text-center">
     <div id="questioninfo">
@@ -29,7 +28,7 @@
     </div>
   </div>
   <div class="col-md-6 center text-center">
-    <%= image_tag(@question.image_url, :width => 750, :height => 1000, :crop => :fill) %>
+    <%= image_tag(@question.image_url, :width => 750, :height => 1000, :crop => :fill, :angle => 180) %>
   </div>
 </div>
 <div class="row text-center shownav">
