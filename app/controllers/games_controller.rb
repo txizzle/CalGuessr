@@ -24,6 +24,11 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
+    if user_signed_in?
+      params[:game] = {:user_id => current_user.id}
+    else
+      params[:game] = {:user_id => nil}
+    end
     @game = Game.new(game_params)
 
     respond_to do |format|

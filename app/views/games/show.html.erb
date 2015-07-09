@@ -4,7 +4,6 @@
         <!-- <div class="row text-center title">
             <h1><span id="cal">Cal</span><span id="guessr">Guessr</span></h1>
         </div> -->
-
         <div class="row wholegame">
             <div class="col-md-8 image">
                 <img id="image" name="slideImg" src="gameimg/000.jpg" onClick="switchImage('slideImg')" />
@@ -12,7 +11,11 @@
                 <p id="answers">Image coordinates will go here.</p>
                 <p>
                   <strong>User:</strong>
-                  <%= @game.user %>
+                  <% if @game.user %>
+                    <%= @game.user.username %>
+                  <% else %>
+                    <% "none" %>
+                  <% end %>
                 </p>
 
                 <p>
@@ -32,7 +35,7 @@
 
                 <div class="row text-center shownav">
                   <%= link_to 'Edit', edit_game_path(@game), :class => "btn" %>
-                  <%= link_to 'Home', home_path, :class => "btn"%>
+                  <%= link_to 'Back', games_path, :class => "btn"%>
                 </div>
             </div>
             <div class="col-md-4 rightside">
