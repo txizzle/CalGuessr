@@ -6,6 +6,7 @@
         </div> -->
         <div class="row wholegame">
             <div class="col-md-8 image">
+                <!-- <p id="notice"><%= notice %></p> -->
                 <img id="image" name="slideImg" src="gameimg/000.jpg" onClick="switchImage('slideImg')" />
                 <p id="test">Image URL will go here.</p>
                 <p id="answers">Image coordinates will go here.</p>
@@ -31,6 +32,13 @@
                 <p>
                   <strong>Completed:</strong>
                   <%= @game.completed %>
+                </p>
+
+                <p>
+                  <strong>Questions:</strong>
+                  <% @game.questions.each do |question| %>
+                    <%= question.id %>
+                  <% end %>
                 </p>
 
                 <div class="row text-center shownav">

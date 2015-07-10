@@ -25,16 +25,16 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     if user_signed_in?
-      params[:game] = {:user_id => current_user.id}
+      params[:game] = { :user_id => current_user.id }
     else
-      params[:game] = {:user_id => nil}
+      params[:game] = { :user_id => nil }
     end
+    params[:game][:question_ids] = Question.getrandomqs(5)
     @game = Game.new(game_params)
-    questions = Question.randomx(5)
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: questions.to_s}
+        format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
@@ -75,6 +75,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:user_id, :score, :progress, :completed)
+      params.require(:game).permit(:user_id, :score, :progress, :completed, { question_ids:[] })
     end
 end

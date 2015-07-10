@@ -19,7 +19,11 @@
         <% @games.each do |game| %>
           <tr>
             <td><%= game.id %></td>
-            <td><%= game.user %></td>
+            <% if game.user %>
+              <td><%= game.user.username %></td>
+            <% else %>
+              <td><%= "Anonymous" %></td>
+            <% end %>
             <td><%= game.score %></td>
             <td><%= game.progress %></td>
             <td><%= game.completed %></td>

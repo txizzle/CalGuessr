@@ -10,11 +10,11 @@ class Question < ActiveRecord::Base
         self.correct ||= 0
     end
 
-    def self.randomx(x)
+    def self.getrandomqs(x)
     	randomqs = []
     	while randomqs.length < x
     		offset = rand(Question.count)
-    		rand_q = Question.offset(offset).first
+    		rand_q = Question.offset(offset).first.id
     		if !randomqs.include?(rand_q)
     			randomqs.append(rand_q)
     		end

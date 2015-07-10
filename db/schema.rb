@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707003716) do
+ActiveRecord::Schema.define(version: 20150709213816) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 20150707003716) do
   end
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
+
+  create_table "games_questions", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "question_id"
+  end
 
   create_table "questions", force: :cascade do |t|
     t.float    "lat"
