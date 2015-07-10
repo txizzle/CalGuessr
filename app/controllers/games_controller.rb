@@ -30,10 +30,11 @@ class GamesController < ApplicationController
       params[:game] = {:user_id => nil}
     end
     @game = Game.new(game_params)
+    questions = Question.randomx(5)
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to @game, notice: questions.to_s}
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
