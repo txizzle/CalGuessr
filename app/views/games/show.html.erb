@@ -7,7 +7,7 @@
         <div class="row wholegame">
             <div class="col-md-8 image">
                 <!-- <p id="notice"><%= notice %></p> -->
-                <img id="image" name="slideImg" src="gameimg/000.jpg" onClick="switchImage('slideImg')" />
+                <%= image_tag(@question.image_url, :width => 750, :height => 500, :crop => :fill) %>
                 <p id="test">Image URL will go here.</p>
                 <p id="answers">Image coordinates will go here.</p>
                 <p>
