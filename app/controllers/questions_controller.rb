@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   # GET /questions
   # GET /questions.json
@@ -36,9 +37,11 @@ class QuestionsController < ApplicationController
         if @question.save
           format.html { redirect_to @question, notice: 'Question was successfully created.' }
           format.json { render :show, status: :created, location: @question }
+          format.js
         else
           format.html { render :new }
           format.json { render json: @question.errors, status: :unprocessable_entity }
+          format.js
         end
       end
     else

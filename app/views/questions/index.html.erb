@@ -13,30 +13,20 @@
           <th>Attempts</th>
           <th>Correct</th>
           <th>Image</th>
-          <th colspan="3">Actions</th>
+          <th colspan="4">Actions</th>
         </tr>
       </thead>
 
       <tbody>
         <% @questions.each do |question| %>
-          <tr>
-            <td><%= question.id %></td>
-            <td><%= question.lat %></td>
-            <td><%= question.long %></td>
-            <td><%= question.difficulty %></td>
-            <td><%= question.attempts %></td>
-            <td><%= question.correct %></td>
-            <td><%= image_tag(question.image_url(:thumbnail)) %></td>
-            <td><%= link_to 'Show', question %></td>
-            <td><%= link_to 'Edit', edit_question_path(question) %></td>
-            <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+          <%= render 'question', :question => question %>
         <% end %>
       </tbody>
     </table>
 
     <br>
-
+    <div id="question-show" class="maintable"></div>
+    <br>
     <%= link_to 'New Question', new_question_path, :class => "btn" %>
     <%= link_to 'Home', home_path, :class => "btn" %>
   </div>

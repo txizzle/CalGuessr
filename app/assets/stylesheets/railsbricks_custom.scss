@@ -604,7 +604,7 @@ h1 {
 img {
   max-width: 100%;
   height: auto;
-  margin: 5px;
+  margin: 5px auto;
 }
 
 .rightside {
@@ -758,4 +758,9 @@ input[type="submit"]:hover {
 .nolrmargin {
   margin-left: 0;
   margin-right: 0;
+}
+
+#question-show {
+  float: none;
+  maring: 0 auto;
 }

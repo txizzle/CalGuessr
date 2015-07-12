@@ -1,0 +1,13 @@
+<tr id="question_<%= question.id %>">
+      <td><%= question.id %></td>
+      <td><%= question.lat %></td>
+      <td><%= question.long %></td>
+      <td><%= question.difficulty %></td>
+      <td><%= question.attempts %></td>
+      <td><%= question.correct %></td>
+      <td><%= image_tag(question.image_url(:thumbnail)) %></td>
+      <td><%= link_to 'Show', question %></td>
+      <td><%= link_to 'Show AJAX', question, remote: 'true' %></td>
+      <td><%= link_to 'Edit', edit_question_path(question) %></td>
+      <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
