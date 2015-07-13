@@ -7,7 +7,7 @@
         <div class="row wholegame">
             <div class="col-md-8 image">
                 <!-- <p id="notice"><%= notice %></p> -->
-                <%= image_tag(@question.image_url, :width => 750, :height => 500, :crop => :fill) %>
+                <div id="question-show"></div>
                 <p id="test">Image URL will go here.</p>
                 <p id="answers">Image coordinates will go here.</p>
                 <p>
@@ -42,6 +42,7 @@
                 </p>
 
                 <div class="row text-center shownav">
+                  <%= link_to 'Next Question', @question, remote: 'true', :class => "btn" %>
                   <%= link_to 'Edit', edit_game_path(@game), :class => "btn" %>
                   <%= link_to 'Back', games_path, :class => "btn"%>
                 </div>
