@@ -42,7 +42,8 @@
                 </p>
 
                 <div class="row text-center shownav">
-                  <%= link_to 'Next Question', @question, remote: 'true', :class => "btn" %>
+                  <%= link_to 'Next Question', games_next_question_path(:id => @game.id), method: :patch, remote: 'true', :class => "btn" %>
+                  <%= link_to 'Prev Question', games_prev_question_path(:id => @game.id), method: :patch, remote: 'true', :class => "btn" %>
                   <%= link_to 'Edit', edit_game_path(@game), :class => "btn" %>
                   <%= link_to 'Back', games_path, :class => "btn"%>
                 </div>
