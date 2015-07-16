@@ -8,7 +8,7 @@ var remove_poi = [
           ]
         }
     ]
-
+var dataId = document.body.getAttribute('data-params-id');
 
 function initialize() {
         
@@ -31,7 +31,18 @@ function initialize() {
                                     //debugger;
                                     //receiveGuess(event.latLng.lat(), event.latLng.lng());
                                     //switchImage('slideImg');
-                                    alert('Lat: ' + event.latLng.lat() + ' Lng: ' + event.latLng.lng());
+                                    var dataId = document.body.getAttribute('data-params-id');
+                                    var test = dataId.toString() + "/make_guess";
+                                    console.log(dataId.toString() + "/make_guess");
+                                    $.ajax({
+                                        type: "POST",
+                                        url: test,
+                                        data: { lat: event.latLng.lat(), long: event.latLng.lng()},
+                                        success: function(data) {
+                                          return alert(data);
+                                        } 
+                                      });
+
     });      
 
 

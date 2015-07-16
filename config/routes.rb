@@ -8,6 +8,7 @@ Calguessr::Application.routes.draw do
   patch 'games/:id/next_question' => 'games#next_question', as: :games_next_question
   patch 'games/:id/prev_question' => 'games#prev_question', as: :games_prev_question
 
+  post 'games/:id/make_guess' => 'games#make_guess', as: :games_make_guess
 
   devise_for :users
 

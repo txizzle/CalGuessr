@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy, :prev_question, :next_question]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :prev_question, :next_question, :make_guess]
 
   # GET /games
   # GET /games.json
@@ -92,14 +92,19 @@ class GamesController < ApplicationController
     end
   end
 
+  def make_guess
+    @question = @game.questions[@game.progress]
+    error = ((params[:lat].to_f - @question.lat)**2 + (params[:long].to_f - @question.long)**2)**0.5
+    respond_to do |format|
+      format.js { render "make_guess", :locals => {:error => error}}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
     end
-
-    
-
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
