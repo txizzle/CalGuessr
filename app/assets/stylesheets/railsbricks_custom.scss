@@ -334,7 +334,7 @@ html,body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -8vh;
+  margin: 0 auto -6vh;
   //padding-bottom: 120px;
   background-color: rgba(55,55,55,0.4);
   color: white;
@@ -538,7 +538,7 @@ img {
 #footer {
   background-color: rgba(34,34,34,0.9);
   color: white;
-  height: 8vh;
+  height: 6vh;
   width: 100%;
 
   .footer-first-row {
@@ -552,7 +552,7 @@ img {
 //***********************************************************
 // PUSH
 .push {
-  height: 8vh;
+  height: 6vh;
 }
 
 //***********************************************************
@@ -573,7 +573,7 @@ body {
 }
 
 #map-container {
-   height: 50vh;
+   height: 60vh;
  }
 
 #map-canvas {
@@ -613,7 +613,6 @@ img {
 }
 .info {
     font-family: 'Dosis';
-    height: 12vh;
     width: auto;
     background-color: rgba(4,30,65,0.7);
     margin-botom: 5px;
@@ -623,14 +622,14 @@ img {
 .info p {
     color: #ffb819;
     padding: 1.0vmin;
-    font-size: 1.5vh;
+    font-size: 3vh;
     text-align: left;
 }
 
 .stats {
     height: 15vh;
     width: auto;
-    background-color: aliceblue;
+    background-color: rgba(4,30,65,0.7);
     margin-bottom: 5px;
     margin-top: 5px;
 }
@@ -643,8 +642,8 @@ img {
 .scorebox h2 {
   margin: 0px;
   padding: 1.0vmin;
-  font-size: 2.5vh;
-  color: black;
+  font-size: 3vh;
+  color: #ffb819;
 }
 
 #cheats p{
