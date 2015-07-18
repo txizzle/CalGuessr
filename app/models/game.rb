@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
 
     def defaults
         self.score ||= 0
-        self.progress ||= 0
+        self.progress ||= 1
         self.completed ||= false
     end
 end
