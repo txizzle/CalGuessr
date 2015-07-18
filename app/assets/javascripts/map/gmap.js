@@ -37,10 +37,7 @@ function initialize() {
                                     $.ajax({
                                         type: "POST",
                                         url: test,
-                                        data: { lat: event.latLng.lat(), long: event.latLng.lng()},
-                                        success: function(data) {
-                                          return alert(data);
-                                        } 
+                                        data: { lat: event.latLng.lat(), long: event.latLng.lng()}
                                       });
 
     });      

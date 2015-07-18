@@ -94,7 +94,9 @@ class GamesController < ApplicationController
 
   def make_guess
     @question = @game.questions[@game.progress]
-    error = ((params[:lat].to_f - @question.lat)**2 + (params[:long].to_f - @question.long)**2)**0.5
+    error = (((params[:lat].to_f - @question.lat)*10000*3280.4/90)**2 + ((params[:long].to_f - @question.long)*10000*3280.4/90)**2)**0.5
+    newscore = @game.score + 5000 - error
+    @game.update_attribute(:score, newscore)
     respond_to do |format|
       format.js { render "make_guess", :locals => {:error => error}}
     end

@@ -1,1 +1,2 @@
-<%= @lat %>
+$('#gameinfo').html("<%= escape_javascript(render :partial => 'gameinfo', :locals => { :game => @game } ) %>");
+

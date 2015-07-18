@@ -1,0 +1,30 @@
+<p>
+  <strong>User:</strong>
+  <% if @game.user %>
+  <%= @game.user.username %>
+  <% else %>
+  <% "none" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @game.score %>
+</p>
+
+<p>
+  <strong>Progress:</strong>
+  <%= @game.progress %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @game.completed %>
+</p>
+
+<p>
+  <strong>Questions:</strong>
+  <% @game.questions.each do |question| %>
+  <%= question.id %>
+  <% end %>
+</p>

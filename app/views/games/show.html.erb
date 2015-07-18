@@ -10,37 +10,9 @@
                 <div id="question-show"></div>
                 <p id="test">Image URL will go here.</p>
                 <p id="answers">Image coordinates will go here.</p>
-                <p>
-                  <strong>User:</strong>
-                  <% if @game.user %>
-                    <%= @game.user.username %>
-                  <% else %>
-                    <% "none" %>
-                  <% end %>
-                </p>
-
-                <p>
-                  <strong>Score:</strong>
-                  <%= @game.score %>
-                </p>
-
-                <p>
-                  <strong>Progress:</strong>
-                  <%= @game.progress %>
-                </p>
-
-                <p>
-                  <strong>Completed:</strong>
-                  <%= @game.completed %>
-                </p>
-
-                <p>
-                  <strong>Questions:</strong>
-                  <% @game.questions.each do |question| %>
-                    <%= question.id %>
-                  <% end %>
-                </p>
-
+                <div id="gameinfo">
+                  <%= render 'gameinfo' %>
+                </div>
                 <div class="row text-center shownav">
                   <%= link_to 'Next Question', games_next_question_path(:id => @game.id), method: :patch, remote: 'true', :class => "btn" %>
                   <%= link_to 'Prev Question', games_prev_question_path(:id => @game.id), method: :patch, remote: 'true', :class => "btn" %>

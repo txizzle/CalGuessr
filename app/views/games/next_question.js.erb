@@ -1,3 +1,5 @@
 console.log("hi");
 console.log('<%= @game.progress %>');
 $('#question-show').html("<%= escape_javascript(render 'image') %>");
+$('#gameinfo').html("<%= escape_javascript(render :partial => 'gameinfo', :locals => { :game => @game } ) %>");
+
