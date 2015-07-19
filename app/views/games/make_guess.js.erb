@@ -1,5 +1,5 @@
 $('#gameinfo').html("<%= escape_javascript(render :partial => 'gameinfo', :locals => { :game => @game } ) %>");
-$('.stats').html("<%= escape_javascript(render :partial => 'gamestats', :locals => { :game => @game } ) %>");
+$('.stats').html("<%= escape_javascript(render :partial => 'gamestats', :locals => { :game => @game, :delta => @delta } ) %>");
 $('#question-show').html("<%= escape_javascript(render 'image') %>");
 
 

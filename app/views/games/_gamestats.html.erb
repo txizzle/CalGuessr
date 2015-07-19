@@ -1,8 +1,14 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="row scorebox">
+<div class="row scorebox">
+  <h2 id="score">Round: <%= @game.progress + 1%> / 5</h2>
+  <div class="col-md-6">
       <h2 id="score">Score: <%= @game.score %></h2>
-      <h2 id="avgscore">Average Score: <%= @game.score / (@game.progress) %></h2>
-    </div>
   </div>
+  <% if @game.progress >= 1 %>
+    <div class="col-md-6">
+      <h2 id="avgscore">Avg Score: <%= @game.score / (@game.progress) %></h2>
+    </div>
+  <% end %>
+  <% if @delta %>
+    <h2 id="score">Last Guess: <%= @delta%> ft off</h2>
+  <% end %>
 </div>
