@@ -1,5 +1,6 @@
 var ready = function() {
-    loadScript();
+    loadMap();
+    loadMenu();
 }
 
 

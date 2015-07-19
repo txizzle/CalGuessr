@@ -19,7 +19,25 @@
         <%= render 'layouts/messages' %>
       </div>
     </div>
+    <a id="menu-toggle" href="#" class="toggle"><i class="fa fa-bars"></i></a>
     <%= yield %>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+          <a class = "cal" href="/home.html">Home</a>
+        </li>
+        <li>
+          <a href="/games.html">View Games</a>
+        </li>
+        <li>
+          <a href="/questions.html">View Questions</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+    </nav>
 
     <div class="push"></div>
   </div>
