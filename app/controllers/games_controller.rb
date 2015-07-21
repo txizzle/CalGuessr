@@ -98,13 +98,15 @@ class GamesController < ApplicationController
     newscore = @game.score + 5000 - @delta
     @game.update_attribute(:score, newscore)
     if @game.progress.equal?(@game.questions.length - 1)
-      @game.update_attribute(:progress, 0)
+      respond_to do |format|
+          format.js { render "finish"}
+      end
     else
       @game.update_attribute(:progress, @game.progress + 1)
     end
     @question = @game.questions[@game.progress]
     @delta = (@delta*100000).round / 100000.0
-      
+    
     respond_to do |format|
       format.js { render "make_guess", :locals => {:delta => @delta}}
     end
