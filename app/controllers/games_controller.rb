@@ -98,8 +98,9 @@ class GamesController < ApplicationController
     newscore = @game.score + 5000 - @delta
     @game.update_attribute(:score, newscore)
     if @game.progress.equal?(@game.questions.length - 1)
+      @game.update_attribute(:completed, true)
       respond_to do |format|
-          format.js { render "finish"}
+          format.js { render "finish" and return}
       end
     else
       @game.update_attribute(:progress, @game.progress + 1)

@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h3>Finished!</h3>
+</div>
+<div class="modal-body">
+  <p>
+    <strong>Score:</strong>
+    <%= @game.score %>
+  </p>
+
+  <p>
+    <strong>Progress:</strong>
+    <%= @game.progress %>
+  </p>
+
+  <p>
+    <strong>Completed:</strong>
+    <%= @game.completed %>
+  </p>
+
+  <p>
+    <strong>Questions:</strong>
+    <% @game.questions.each do |question| %>
+    <%= question.id %>
+    <% end %>
+  </p>
+</div>
+<div class="modal-footer">
+  <%= link_to 'New Game', new_game_path, :class => "btn" %>
+  <%= link_to 'Home', home_path, :class => "btn" %>
+</div>

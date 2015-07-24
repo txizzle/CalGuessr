@@ -870,3 +870,14 @@ input[type="submit"]:hover {
 .toggle:hover {
   color: white;
 } 
+
+#game-modal {
+  height: 500px;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+}
+
+.modal.fade.in {
+  top: 30%;
+}
