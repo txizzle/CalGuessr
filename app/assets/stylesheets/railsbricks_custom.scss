@@ -627,7 +627,7 @@ img {
 }
 
 .stats {
-    height: 15vh;
+    height: 20vh;
     width: auto;
     background-color: rgba(4,30,65,0.7);
     margin-bottom: 5px;
@@ -872,10 +872,13 @@ input[type="submit"]:hover {
 } 
 
 #game-modal {
-  height: 500px;
+  height: 50%;
   width: 50%;
   margin: 0 auto;
-  color: white;
+  font-family: 'Dosis';
+  color: #ffb819;
+  background: rgba(4,30,65,0.7);
+  border: solid #ffb819 2px;
 }
 
 .modal.fade.in {

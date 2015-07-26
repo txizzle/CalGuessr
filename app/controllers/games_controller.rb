@@ -95,7 +95,7 @@ class GamesController < ApplicationController
   def make_guess
     @question = @game.questions[@game.progress]
     @delta = (((params[:lat].to_f - @question.lat)*10000*3280.4/90)**2 + ((params[:long].to_f - @question.long)*10000*3280.4/90)**2)**0.5
-    newscore = @game.score + 5000 - @delta
+    newscore = @game.score + @delta
     @game.update_attribute(:score, newscore)
     if @game.progress.equal?(@game.questions.length - 1)
       @game.update_attribute(:completed, true)
