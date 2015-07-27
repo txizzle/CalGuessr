@@ -3,26 +3,42 @@
 </div>
 <div class="modal-body">
   <p>
-    <strong>Score:</strong>
-    <%= @game.score %>
+    <strong>Final:</strong>
+    <%= @game.score %> ft off
   </p>
+  <% if @game.score < 500 %>
+    <p>
+      <strong>Rank: Campus Pro</strong>
+      YOU'RE A PRO! Wow, are you cheating? You aced it. Maybe you should go home sometimes. Do you do this for a living or something? You know the campus like the back of your hand!
+    </p>
+  <% elsif @game.score < 1000 %>
+    <p>
+      <strong>Rank: Campus Semi-Pro</strong>
+      Very impressive! You're either a senior or are on campus way too much. Play again and try to get the Campus Pro rank!
+    </p>
+  <% elsif @game.score < 1500 %>
+    <p>
+      <strong>Rank: Campus Guru</strong>
+      Great job! You obviously know the campus very well. Play again and try to get the Campus Semi-Pro rank!
+    </p>
+  <% elsif @game.score < 2000 %>
+    <p>
+      <strong>Rank: Campus Explorer</strong>
+      Good job! You know campus well. Try again and go for the Campus Guru rank! 
+    </p>
 
-  <p>
-    <strong>Progress:</strong>
-    <%= @game.progress %>
-  </p>
+  <% elsif @game.score < 5000 %>
+    <p>
+      <strong>Rank: Average Student</strong>
+      Nice! You know campus about as well as other students. Try again and go for the Campus Explorer rank!
+    </p>
+  <% else %>
+    <p>
+      <strong>Rank: Stanford Student</strong>
+      Do you even go here...? Maybe you missclicked. Try again and go for the Average Student rank!
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Completed:</strong>
-    <%= @game.completed %>
-  </p>
-
-  <p>
-    <strong>Questions:</strong>
-    <% @game.questions.each do |question| %>
-    <%= question.id %>
-    <% end %>
-  </p>
 </div>
 <div class="modal-footer">
   <%= link_to 'New Game', new_game_path, :class => "btn" %>
