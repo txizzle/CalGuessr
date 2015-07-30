@@ -1,5 +1,5 @@
-<div class="modal-header">
-  <h3>Finished!</h3>
+<div class="modal-header text-center">
+  <h1>Finished!</h1>
 </div>
 <div class="modal-body">
   <p>
@@ -9,32 +9,38 @@
   <% if @game.score < 500 %>
     <p>
       <strong>Rank: Campus Pro</strong>
+      <br>
       YOU'RE A PRO! Wow, are you cheating? You aced it. Maybe you should go home sometimes. Do you do this for a living or something? You know the campus like the back of your hand!
     </p>
   <% elsif @game.score < 1000 %>
     <p>
       <strong>Rank: Campus Semi-Pro</strong>
+      <br>
       Very impressive! You're either a senior or are on campus way too much. Play again and try to get the Campus Pro rank!
     </p>
   <% elsif @game.score < 1500 %>
     <p>
       <strong>Rank: Campus Guru</strong>
+      <br>
       Great job! You obviously know the campus very well. Play again and try to get the Campus Semi-Pro rank!
     </p>
   <% elsif @game.score < 2000 %>
     <p>
       <strong>Rank: Campus Explorer</strong>
+      <br>
       Good job! You know campus well. Try again and go for the Campus Guru rank! 
     </p>
 
   <% elsif @game.score < 5000 %>
     <p>
       <strong>Rank: Average Student</strong>
+      <br>
       Nice! You know campus about as well as other students. Try again and go for the Campus Explorer rank!
     </p>
   <% else %>
     <p>
       <strong>Rank: Stanford Student</strong>
+      <br>
       Do you even go here...? Maybe you missclicked. Try again and go for the Average Student rank!
     </p>
   <% end %>
