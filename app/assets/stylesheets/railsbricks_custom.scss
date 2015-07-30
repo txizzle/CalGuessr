@@ -886,3 +886,23 @@ input[type="submit"]:hover {
   top: 30%;
   bottom: 30%;
 }
+
+.about {
+    font-family: 'Dosis';
+    width: auto;
+    height: 50%;
+    background-color: rgba(0,0,0,0.3);
+    margin-botom: 5px;
+    margin-top: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width: 0.5vh;
+    padding: 7vmin;
+}
+
+.about p {
+    color: white;
+    padding: 1.0vmin;
+    font-size: 3vh;
+    text-align: left;
+}

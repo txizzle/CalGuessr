@@ -10,5 +10,7 @@ class PagesController < ApplicationController
   def inside
   end
   
+  def about
+  end
   
 end

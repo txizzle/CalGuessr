@@ -3,6 +3,7 @@ Calguessr::Application.routes.draw do
   resources :games
   root "pages#home"
   get "home", to: "pages#home", as: "home"
+  get "about", to: "pages#about", as: "about"
   get "inside", to: "pages#inside", as: "inside"
   
   patch 'games/:id/next_question' => 'games#next_question', as: :games_next_question
