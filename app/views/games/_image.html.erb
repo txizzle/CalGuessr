@@ -1,1 +1,1 @@
-<%= image_tag(@question.image_url, :width => 750, :height => 500, :crop => :fill) %>
+<%= cl_image_tag(@question.image_url, :weight => :auto, :responsive_placeholder => "blank") %>
