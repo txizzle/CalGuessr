@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title><%= @title || "CalGuessr" %></title>
+  <title><%= @title%></title>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
@@ -27,6 +27,12 @@
         </li>
         <li>
           <a href="/questions.html">View Questions</a>
+        </li>
+        <li>
+          <%= link_to 'New Game', new_game_path%>
+        </li>
+        <li>
+          <a href="#">High Scores</a>
         </li>
         <li>
           <a href="/about.html">About</a>
