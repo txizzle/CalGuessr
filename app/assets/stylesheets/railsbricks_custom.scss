@@ -700,12 +700,12 @@ form {
 
 @font-face {
   font-family: 'Infinity';
-  src: url(Infinity.ttf) format('truetype');
+  src: font-url(Infinity.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Adam CG Pro';
-  src: url(Adamcgpro.otf) format('truetype');
+  src: font-url(Adamcgpro.otf) format('truetype');
 }
 
 .btn {
