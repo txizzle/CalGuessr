@@ -17,6 +17,7 @@ $link-hover-color: white;
 // Typography
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,600,700);
+@import url(http://fonts.googleapis.com/css?family=Cantarell:400,600,700);
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $font-family-monospace: 'Menlo','Monaco','Consolas','Courier New', monospace;
@@ -645,7 +646,7 @@ img {
   font-size: 2.8vh;
   color: #ffb819;
   text-align: center;
-  font-family: 'Adam CG Pro';
+  font-family: 'Cantarell';
 }
 
 #cheats p{
