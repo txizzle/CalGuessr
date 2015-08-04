@@ -18,6 +18,7 @@ $link-hover-color: white;
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,600,700);
 @import url(http://fonts.googleapis.com/css?family=Cantarell:400,600,700);
+@import url(http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $font-family-monospace: 'Menlo','Monaco','Consolas','Courier New', monospace;
@@ -700,12 +701,12 @@ form {
 
 @font-face {
   font-family: 'Infinity';
-  src: font-url(Infinity.ttf) format('truetype');
+  src: font-url(Infinity) format('truetype');
 }
 
 @font-face {
   font-family: 'Adam CG Pro';
-  src: font-url(Adamcgpro.otf) format('truetype');
+  src: font-url(Adamcgpro) format('truetype');
 }
 
 .btn {
@@ -890,7 +891,7 @@ input[type="submit"]:hover {
 }
 
 .about {
-    font-family: 'Dosis';
+    font-family: 'Karla';
     width: auto;
     height: 50%;
     background-color: rgba(0,0,0,0.3);
