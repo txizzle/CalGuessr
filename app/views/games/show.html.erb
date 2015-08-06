@@ -26,3 +26,9 @@
     </div>
 </body>
 
+<% if @game.completed == true %>
+    <script>
+        $("#game-modal").html("<%= escape_javascript(render 'finish') %>");
+        $("#game-modal").modal("show");
+    </script>
+<% end %>
