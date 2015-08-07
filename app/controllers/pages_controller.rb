@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def highscores
+    @games = Game.high_scores
   end
   
 end

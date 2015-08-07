@@ -1,18 +1,50 @@
 <% title("High Scores") %>
+<div class="row nolrmargin highscores-container">
+  <div class="col-md-12 text-center">
+    <h1 class="cal">Highscores</h1>
 
-<body>
-    <div class="container-fluid .fill">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 text-center">
-                <br>
-                <br>
-                <br>
-                <div class="about">
-                    <h1>Coming Soon!</h1>
-                </div>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-</body>
+    <table class="highscores">
+      <thead>
+        <tr>
+            <th>Place</th>
+            <th>User</th>
+            <th>Score</th>
+            <th>Rank</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @games.each_with_index do |game, index| %>
+        <tr>
+            <td><%= index + 1%></td>
+            <% if game.user %>
+                <td><%= game.user.username %></td>
+            <% else %>
+                <td><%= "Anonymous" %></td>
+            <% end %>
+            <td><%= game.score %></td>
+            <% if game.score < 500 %>
+                <td>Campus Pro</td>
+            <% elsif game.score < 1000 %>
+                <td>Campus Semi-Pro</td>
+            <% elsif game.score < 1500 %>
+                <td>Campus Guru</td>
+            <% elsif game.score < 2000 %>
+                <td>Campus Explorer</td>
+            <% elsif game.score < 5000 %>
+                <td>Average Student</td>
+            <% else %>
+                <td>Stanford Student</td>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path, :class => "btn" %>
+<%= link_to 'Home', home_path, :class => "btn" %>
+</div>
+</div>
+

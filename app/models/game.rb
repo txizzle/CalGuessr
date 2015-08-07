@@ -10,4 +10,8 @@ class Game < ActiveRecord::Base
         self.progress ||= 0
         self.completed ||= false
     end
+
+    def self.high_scores
+        @games = Game.where('completed' => true).order('score asc').limit(10)
+    end
 end

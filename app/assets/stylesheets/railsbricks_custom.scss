@@ -655,12 +655,12 @@ img {
   margin: 0 0 0.5vh;
 }
 
-table, th, td {
+th, td {
   color: #ffb819;
   border: 1px solid #ffb819;
-  background-color: rgba(4,30,65,0.7);
+  background-color: rgba(4,30,65,0.9);
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   font-family: 'Dosis';
   a {
     color: #ffb819;
@@ -876,7 +876,7 @@ input[type="submit"]:hover {
 
 #game-modal {
   height: 50%;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   font-family: 'Dosis';
   color: #ffb819;
@@ -886,8 +886,8 @@ input[type="submit"]:hover {
 }
 
 .modal.fade.in {
-  top: 25%;
-  bottom: 25%;
+  top: 20%;
+  bottom: 20%;
 }
 
 .about {
@@ -908,4 +908,13 @@ input[type="submit"]:hover {
     padding: 1.0vmin;
     font-size: 3vh;
     text-align: left;
+}
+
+.highscores {
+  margin: auto;
+  padding: 50px;
+}
+
+.highscores-container {
+  margin-bottom: 20px;
 }
