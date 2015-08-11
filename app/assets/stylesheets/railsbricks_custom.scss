@@ -560,7 +560,7 @@ img {
 //***********************************************************
 
 body {
-  background: asset-data-url("campus-bg.jpg") no-repeat center center fixed; 
+  background: asset-data-url("campus-bg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -872,7 +872,7 @@ input[type="submit"]:hover {
 
 .toggle:hover {
   color: white;
-} 
+}
 
 #game-modal {
   height: 60%;
@@ -917,4 +917,8 @@ input[type="submit"]:hover {
 
 .highscores-container {
   margin-bottom: 20px;
+}
+
+label {
+  color: white;
 }

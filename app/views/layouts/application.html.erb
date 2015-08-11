@@ -23,12 +23,6 @@
           <a class = "cal" href="/home.html">Home</a>
         </li>
         <li>
-          <a href="/games.html">View Games</a>
-        </li>
-        <li>
-          <a href="/questions.html">View Questions</a>
-        </li>
-        <li>
           <%= link_to 'New Game', new_game_path%>
         </li>
         <li>
@@ -37,6 +31,18 @@
         <li>
           <a href="/about.html">About</a>
         </li>
+        <% if !user_signed_in? %>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% else %>
+        <li><%= link_to "Edit your account", edit_user_registration_path %></li>
+
+        <% if current_user.admin? %>
+        <li><%= link_to "Admin", admin_root_path %></li>
+        <% end %>
+
+        <li><%= link_to "Sign out", destroy_user_session_path, data:{method: :delete} %></li>
+        <% end %>
       </ul>
     </nav>
 
@@ -45,9 +51,9 @@
   <%= render 'layouts/footer' %>
 
   <div id="game-modal" class="modal fade" data-backdrop="static"></div>
-  
 
-  
+
+
 
 </body>
 <script>

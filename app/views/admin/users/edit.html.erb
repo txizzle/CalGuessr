@@ -4,7 +4,7 @@
     <h1>
       Edit User <small><%= "#{@user.username.capitalize} - id: #{@user.id}" %></small>
     </h1>
-    <p><%= link_to "Back to Users", admin_users_path %></p>
+    <p><%= link_to "Back to Users", admin_users_path, :class => "btn"%></p>
 
     <%= form_for [:admin, @user], :html => { :role => "form" } do |f| %>
 

@@ -31,7 +31,7 @@
     <p>
       <strong>Rank: Campus Explorer</strong>
       <br>
-      Good job! You know campus well. Try again and go for the Campus Guru rank! 
+      Good job! You know campus well. Try again and go for the Campus Guru rank!
     </p>
 
   <% elsif @game.score < 5000 %>
@@ -50,6 +50,7 @@
 
 </div>
 <div class="modal-footer">
+  <%= link_to 'Highscores', highscores_path, :class => "btn" %>
   <%= link_to 'New Game', new_game_path, :class => "btn" %>
   <%= link_to 'Home', home_path, :class => "btn" %>
 </div>
