@@ -6,6 +6,9 @@
     <strong>Final:</strong>
     <%= @game.score %> ft off
   </p>
+  <% if @highscores.length < 10 or @highscores[-1] > @game.score %>
+    <p> Congratulations, you made it to the high scores! </p>
+  <% end %>
   <% if @game.score < 500 %>
     <p>
       <strong>Rank: Campus Pro</strong>

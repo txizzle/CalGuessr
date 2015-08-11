@@ -11,6 +11,7 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @question = @game.questions[@game.progress]
+    @highscores = Game.high_scores
   end
 
   # GET /games/new
@@ -98,6 +99,7 @@ class GamesController < ApplicationController
     newscore = @game.score + @delta
     @game.update_attribute(:score, newscore)
     if @game.progress.equal?(@game.questions.length - 1)
+      @cutoff = Game.high_scores[-1]
       @game.update_attribute(:completed, true)
       respond_to do |format|
           format.js { render "finish" and return}
