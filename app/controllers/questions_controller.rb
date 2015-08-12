@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin!, only: [:index]
   respond_to :html, :js
 
   # GET /questions
@@ -47,9 +48,9 @@ class QuestionsController < ApplicationController
     else
       redirect_to new_question_url, :flash => { :error => "The image you attached doesn't have GPS EXIF data! Please try another image."}
     end
-    
 
-    
+
+
   end
 
   # PATCH/PUT /questions/1

@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy, :prev_question, :next_question, :make_guess]
+  before_action :require_admin!, only: [:index]
 
   # GET /games
   # GET /games.json
@@ -109,7 +110,7 @@ class GamesController < ApplicationController
     end
     @question = @game.questions[@game.progress]
     @delta = (@delta*100000).round / 100000.0
-    
+
     respond_to do |format|
       format.js { render "make_guess", :locals => {:delta => @delta}}
     end
