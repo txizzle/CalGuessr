@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::BaseController
+  before_action :require_admin!
 
   before_action :set_user, only: [
     :show,
