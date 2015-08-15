@@ -1,11 +1,12 @@
 <div class="modal-header text-center">
-  <h1>Finished!</h1>
+  <h1>Congratulations!</h1>
 </div>
 <div class="modal-body">
   <p>
     <strong>Final:</strong>
     <%= @game.score %> ft off
   </p>
+  <p> Congratulations, you made it to the high scores! </p>
   <% if @game.score < 500 %>
     <p>
       <strong>Rank: Campus Pro</strong>
