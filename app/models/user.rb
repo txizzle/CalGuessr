@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, message: "can only contain letters and digits"
   validates :username, length: { in: 4..15 }
   # :email
-  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  #validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   def self.paged(page_number)
     order(admin: :desc, username: :asc).page page_number
@@ -53,5 +53,13 @@ class User < ActiveRecord::Base
 
   def self.users_count
     where("admin = ? AND locked = ?",false,false).count
+  end
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
   end
 end

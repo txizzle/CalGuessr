@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816053917) do
+ActiveRecord::Schema.define(version: 20150816212525) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20150816053917) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "",    null: false
-    t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.boolean  "admin",                  default: false, null: false
     t.boolean  "locked",                 default: false, null: false
@@ -78,7 +77,6 @@ ActiveRecord::Schema.define(version: 20150816053917) do
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true

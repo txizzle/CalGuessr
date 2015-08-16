@@ -21,7 +21,6 @@
     <th>Username</th>
     <th>Admin</th>
     <th>Locked</th>
-    <th>Email</th>
     <th>Sign In Count</th>
     <th>Created At</th>
     <th>Last Sign In</th>
@@ -35,7 +34,6 @@
     <td><%= link_to user.username.capitalize, admin_user_path(user) %></td>
     <td><%= user.admin? ? "<b>yes</b>".html_safe : "no" %></td>
     <td><%= user.locked? ? "<b>yes</b>".html_safe : "no" %></td>
-    <td><%= user.email %></td>
     <td><%= user.sign_in_count %></td>
     <td><%= time_ago_in_words(user.created_at) %></td>
     <% unless user.last_sign_in_at.nil? %>
