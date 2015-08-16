@@ -11,6 +11,7 @@ Calguessr::Application.routes.draw do
   patch 'games/:id/prev_question' => 'games#prev_question', as: :games_prev_question
 
   post 'games/:id/make_guess' => 'games#make_guess', as: :games_make_guess
+  post 'games/:id/update_name' => 'games#update_name', as: :games_update_name
 
   devise_for :users
 

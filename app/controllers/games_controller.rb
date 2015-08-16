@@ -116,6 +116,19 @@ class GamesController < ApplicationController
     end
   end
 
+  def update_name
+    @game = Game.find(params[:id])
+    if @game.update_attribute(:name, game_params[:name])
+      respond_to do |format|
+        format.js { render "finish" and return}
+      end
+    else
+      respond_to do |format|
+        format.js { render "error"}
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game

@@ -6,9 +6,9 @@
     <strong>Final:</strong>
     <%= @game.score %> ft off
   </p>
-  <div id="testhide" class="text-center">
+  <div id="inputname" class="text-center">
     <p> Congratulations, you made it to the high scores! What is your name?</p>
-    <%= form_for(@game) do |f| %>
+    <%= form_for @game, :remote => true, :url => { :action => "update_name" }, :html => { :method => "post" } do |f| %>
       <div class="field">
         <%= f.text_field :name %>
       </div>

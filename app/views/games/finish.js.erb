@@ -1,4 +1,4 @@
-<% if @highscores.length < 10 or @highscores[-1] > @game.score %>
+<% if @game.name == nil and (@highscores.length < 10 or @highscores[-1] > @game.score) %>
   $("#game-modal").html("<%= escape_javascript(render 'inputname') %>")
   $("#game-modal").modal("show")
 <% else %>
