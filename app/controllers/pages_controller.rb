@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, only: [
-    :inside
+    :dashboard
   ]
 
   def home
     @game = Game.new
   end
 
-  def inside
+  def dashboard
   end
   
   def about
