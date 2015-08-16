@@ -17,8 +17,8 @@
         <% @games.each_with_index do |game, index| %>
         <tr>
             <td><%= index + 1%></td>
-            <% if game.user %>
-                <td><%= game.user.username %></td>
+            <% if game.name %>
+                <td><%= game.name %></td>
             <% else %>
                 <td><%= "Anonymous" %></td>
             <% end %>

@@ -8,6 +8,7 @@
         <tr>
           <th>ID</th>
           <th>User</th>
+          <th>Name</th>
           <th>Score</th>
           <th>Progress</th>
           <th>Completed</th>
@@ -24,6 +25,7 @@
             <% else %>
               <td><%= "Anonymous" %></td>
             <% end %>
+            <td><%= game.name %></td>
             <td><%= game.score %></td>
             <td><%= game.progress %></td>
             <td><%= game.completed %></td>

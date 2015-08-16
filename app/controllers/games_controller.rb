@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     if user_signed_in?
-      params[:game] = { :user_id => current_user.id }
+      params[:game] = { :user_id => current_user.id, :name => current_user.username }
     else
       params[:game] = { :user_id => nil }
     end
@@ -100,7 +100,7 @@ class GamesController < ApplicationController
     newscore = @game.score + @delta
     @game.update_attribute(:score, newscore)
     if @game.progress.equal?(@game.questions.length - 1)
-      @cutoff = Game.high_scores[-1]
+      @highscores = Game.high_scores
       @game.update_attribute(:completed, true)
       respond_to do |format|
           format.js { render "finish" and return}
@@ -124,6 +124,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:user_id, :score, :progress, :completed, { question_ids:[] })
+      params.require(:game).permit(:user_id, :name, :score, :progress, :completed, { question_ids:[] })
     end
 end

@@ -27,10 +27,21 @@
 </body>
 
 <% if @game.completed == true %>
-    <script>
-        $(function() {
-            $("#game-modal").html("<%= escape_javascript(render 'finish') %>");
-            $("#game-modal").modal("show");
-        });
-    </script>
+    <% if @game.name == nil and (@highscores.length < 10 or @highscores[-1] > @game.score) %>
+        <script>
+            $(function() {
+                $("#game-modal").html("<%= escape_javascript(render 'inputname') %>");
+                $("#game-modal").modal("show");
+            });
+        </script>
+    <% else %>
+        <script>
+            $(function() {
+                $("#game-modal").html("<%= escape_javascript(render 'finish') %>");
+                $("#game-modal").modal("show");
+            });
+        </script>
+    <% end %>
 <% end %>
+
+

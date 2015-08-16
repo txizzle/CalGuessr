@@ -2,50 +2,21 @@
   <h1>Congratulations!</h1>
 </div>
 <div class="modal-body">
-  <p>
+  <p class="text-center">
     <strong>Final:</strong>
     <%= @game.score %> ft off
   </p>
-  <p> Congratulations, you made it to the high scores! </p>
-  <% if @game.score < 500 %>
-    <p>
-      <strong>Rank: Campus Pro</strong>
-      <br>
-      YOU'RE A PRO! Wow, are you cheating? You aced it. Maybe you should go home sometimes. Do you do this for a living or something? You know the campus like the back of your hand!
-    </p>
-  <% elsif @game.score < 1000 %>
-    <p>
-      <strong>Rank: Campus Semi-Pro</strong>
-      <br>
-      Very impressive! You're either a senior or are on campus way too much. Play again and try to get the Campus Pro rank!
-    </p>
-  <% elsif @game.score < 1500 %>
-    <p>
-      <strong>Rank: Campus Guru</strong>
-      <br>
-      Great job! You obviously know the campus very well. Play again and try to get the Campus Semi-Pro rank!
-    </p>
-  <% elsif @game.score < 2000 %>
-    <p>
-      <strong>Rank: Campus Explorer</strong>
-      <br>
-      Good job! You know campus well. Try again and go for the Campus Guru rank!
-    </p>
-
-  <% elsif @game.score < 5000 %>
-    <p>
-      <strong>Rank: Average Student</strong>
-      <br>
-      Nice! You know campus about as well as other students. Try again and go for the Campus Explorer rank!
-    </p>
-  <% else %>
-    <p>
-      <strong>Rank: Stanford Student</strong>
-      <br>
-      Do you even go here...? Maybe you missclicked. Try again and go for the Average Student rank!
-    </p>
-  <% end %>
-
+  <div id="testhide" class="text-center">
+    <p> Congratulations, you made it to the high scores! What is your name?</p>
+    <%= form_for(@game) do |f| %>
+      <div class="field">
+        <%= f.text_field :name %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Submit"%>
+      </div>
+    <% end%>
+  </div>
 </div>
 <div class="modal-footer">
   <%= link_to 'Highscores', highscores_path, :class => "btn" %>
