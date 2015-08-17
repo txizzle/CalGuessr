@@ -7,7 +7,7 @@ class Question < ActiveRecord::Base
 
     def defaults
         self.attempts ||= 0
-        self.correct ||= 0
+        self.rating ||= 0
     end
 
     def self.getrandomqs(x)

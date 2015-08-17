@@ -43,7 +43,11 @@
 
 <br>
 
-<%= link_to 'New Game', new_game_path, :class => "btn" %>
+<%= form_for Game.new do |f| %>
+        <div class="actions">
+          <%= f.submit "New Game"%>
+        </div>
+      <% end %>
 <%= link_to 'Home', home_path, :class => "btn" %>
 </div>
 </div>

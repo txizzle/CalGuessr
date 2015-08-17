@@ -99,6 +99,7 @@ class GamesController < ApplicationController
     @delta = (((params[:lat].to_f - @question.lat)*10000*3280.4/90)**2 + ((params[:long].to_f - @question.long)*10000*3280.4/90)**2)**0.5
     newscore = @game.score + @delta
     @game.update_attribute(:score, newscore)
+    @question.update_attribute(:attempts, @question.attempts + 1)
     if @game.progress.equal?(@game.questions.length - 1)
       @highscores = Game.high_scores
       @game.update_attribute(:completed, true)

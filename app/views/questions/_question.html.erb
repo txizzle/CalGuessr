@@ -4,7 +4,7 @@
       <td><%= question.long %></td>
       <td><%= question.difficulty %></td>
       <td><%= question.attempts %></td>
-      <td><%= question.correct %></td>
+      <td><%= question.rating %></td>
       <td><%= image_tag(question.image_url(:thumbnail)) %></td>
       <td><%= link_to 'Show', question %></td>
       <td><%= link_to 'Show AJAX', question, remote: 'true' %></td>

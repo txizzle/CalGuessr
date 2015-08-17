@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816212525) do
+ActiveRecord::Schema.define(version: 20150817040159) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150816212525) do
     t.float    "long"
     t.integer  "difficulty"
     t.integer  "attempts"
-    t.integer  "correct"
+    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150816212525) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rating"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
