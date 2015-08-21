@@ -77,5 +77,6 @@ class User < ActiveRecord::Base
       gamma = [3.5 - dif/750, 1.0].max
       self.rating += [16*gamma*(-1 + dif/600), -1].min
     end
+    self.save
   end
 end

@@ -26,7 +26,7 @@ class Question < ActiveRecord::Base
       if delta < 500
         #count guess as Win for User
         gamma = [3.5 - dif/750, 1.0].max
-        self.rating += [16*gamma*(-1 + dif/600), -1].min
+        self.update_attribute("rating", self.rating + [16*gamma*(-1 + dif/600), -1].min)
       elsif 500 <= delta and delta <= 1500
         #count guess as Draw for User
         change = 16*(dif/600)
@@ -36,5 +36,6 @@ class Question < ActiveRecord::Base
         gamma = 3.5 - dif/250
         self.rating += [16*gamma*(1 + dif/600), 1].max
       end
+      self.save
     end
 end
