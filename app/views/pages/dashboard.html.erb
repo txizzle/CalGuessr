@@ -3,7 +3,20 @@
     <div class="dashboard">
         <h1 class="cal">User Dashboard</h1>
         <p>The user dashboard is still in progress. In the future, you will be able to view game statistics and your ELO!</p>
+        <table class="maintable">
 
+          <tbody>
+              <tr>
+                <td>Your Name</td>
+                <td><%= current_user.username %></td>
+              </tr>
+              <tr>
+                <td>Your Rating</td>
+                <td><%= current_user.rating %></td>
+              </tr>
+          </tbody>
+        </table>
+        <br>
         <%= render 'layouts/navigation_links' %>
     </div>
 </div>
