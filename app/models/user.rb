@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
       #count guess as Win for User
       gamma = 3.5 - dif/250
       self.rating += [16*gamma*(1 + dif/600), 1].max
-    elsif 500 <= delta <= 1500
+    elsif 500 <= delta and delta <= 1500
       #count guess as Draw for User
       change = 16*(dif/600)
       self.rating = self.rating + change + (1000-dif)/1000*(change.abs)
