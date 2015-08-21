@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
       "#{username}"
     end
   end
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -61,5 +61,21 @@ class User < ActiveRecord::Base
 
   def email_changed?
     false
+  end
+
+  def update_rating(delta, dif)
+    if delta < 500
+      #count guess as Win for User
+      gamma = 3.5 - dif/250
+      self.rating += [16*gamma*(1 + dif/600), 1].max
+    elsif 500 <= delta <= 1500
+      #count guess as Draw for User
+      change = 16*(dif/600)
+      self.rating = self.rating + change + (1000-dif)/1000*(change.abs)
+    else
+      #count guess as Loss for User
+      gamma = [3.5 - dif/750, 1.0].max
+      self.rating += [16*gamma*(-1 + dif/600), -1].min
+    end
   end
 end
