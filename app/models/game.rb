@@ -9,7 +9,6 @@ class Game < ActiveRecord::Base
         self.score ||= 0
         self.progress ||= 0
         self.completed ||= false
-        self.created ||= Time.now
     end
 
     def self.high_scores
