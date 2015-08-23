@@ -27,7 +27,7 @@
               <td><%= "Anonymous" %></td>
             <% end %>
             <td><%= game.name %></td>
-            <td><%= game.created_at %></td>
+            <td><%= game.created_at.strftime("%m/%d/%Y %I:%M%p") %></td>
             <td><%= game.score %></td>
             <td><%= game.progress %></td>
             <td><%= game.completed %></td>
