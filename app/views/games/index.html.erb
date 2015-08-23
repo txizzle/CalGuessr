@@ -9,6 +9,7 @@
           <th>ID</th>
           <th>User</th>
           <th>Name</th>
+          <th>Created At</th>
           <th>Score</th>
           <th>Progress</th>
           <th>Completed</th>
@@ -26,6 +27,7 @@
               <td><%= "Anonymous" %></td>
             <% end %>
             <td><%= game.name %></td>
+            <td><%= game.created_at %></td>
             <td><%= game.score %></td>
             <td><%= game.progress %></td>
             <td><%= game.completed %></td>
@@ -43,4 +45,3 @@
     <%= link_to 'Home', home_path, :class => "btn" %>
   </div>
 </div>
-
