@@ -16,9 +16,6 @@ $link-hover-color: white;
 
 // Typography
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
-@import url(http://fonts.googleapis.com/css?family=Dosis:400,600,700);
-@import url(http://fonts.googleapis.com/css?family=Cantarell:400,600,700);
-@import url(http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $font-family-monospace: 'Menlo','Monaco','Consolas','Courier New', monospace;
@@ -705,8 +702,24 @@ form {
 }
 
 @font-face {
+  font-family: 'Cantarell';
+  src: font-url(Cantarell-Regular) format('truetype');
+}
+
+
+@font-face {
   font-family: 'Adam CG Pro';
   src: font-url(Adamcgpro) format('truetype');
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: font-url(Dosis-Regular) format('truetype');
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: font-url(Karla-Regular) format('truetype');
 }
 
 .btn {
@@ -966,5 +979,3 @@ label {
     padding: 1.0vmin;
     font-size: 3vh;
 }
-
-
