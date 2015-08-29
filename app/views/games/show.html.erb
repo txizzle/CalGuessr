@@ -27,7 +27,7 @@
 </body>
 
 <% if @game.completed == true %>
-    <% if @game.name == nil and (@highscores.length < 10 or @highscores[-1] > @game.score) %>
+    <% if @game.name == nil and (@highscores.length < 10 or @highscores[-1].score > @game.score) %>
         <script>
             $(function() {
                 $("#game-modal").html("<%= escape_javascript(render 'inputname') %>");
@@ -43,5 +43,3 @@
         </script>
     <% end %>
 <% end %>
-
-
